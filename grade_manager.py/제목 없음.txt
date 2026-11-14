@@ -1,0 +1,40 @@
+
+# 성적 관리 프로그램
+# Python 기초 프로젝트
+
+print("===== 성적 관리 프로그램 =====")
+
+subjects = ["국어", "영어", "수학"]
+
+scores = []
+
+for subject in subjects:
+    score = float(input(subject + " 점수 입력: "))
+    
+    while score < 0 or score > 100:
+        print("0점부터 100점 사이로 입력해주세요.")
+        score = float(input(subject + " 점수 입력: "))
+    
+    scores.append(score)
+
+average = sum(scores) / len(scores)
+
+print("\n===== 성적 결과 =====")
+
+for i in range(len(subjects)):
+    print(subjects[i] + ":", scores[i], "점")
+
+print("평균 점수:", round(average, 2))
+
+if average >= 90:
+    grade = "A"
+elif average >= 80:
+    grade = "B"
+elif average >= 70:
+    grade = "C"
+elif average >= 60:
+    grade = "D"
+else:
+    grade = "F"
+
+print("최종 등급:", grade)
