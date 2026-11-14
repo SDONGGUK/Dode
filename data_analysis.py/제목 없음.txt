@@ -1,0 +1,33 @@
+
+# AI 데이터 분석 프로그램
+# Python 기초 데이터 분석 프로젝트
+
+import statistics
+
+print("===== 데이터 분석 프로그램 =====")
+
+data = []
+
+count = int(input("분석할 데이터 개수를 입력하세요: "))
+
+for i in range(count):
+    number = float(input(str(i + 1) + "번째 데이터 입력: "))
+    data.append(number)
+
+# 데이터 분석
+average = statistics.mean(data)
+maximum = max(data)
+minimum = min(data)
+median = statistics.median(data)
+
+# 결과 출력
+print("\n===== 데이터 분석 결과 =====")
+
+print("입력 데이터:", data)
+print("데이터 개수:", len(data))
+print("평균:", round(average, 2))
+print("최댓값:", maximum)
+print("최솟값:", minimum)
+print("중앙값:", median)
+
+print("\n===== 분석 완료 =====")
