@@ -1,0 +1,30 @@
+
+# 숫자 맞히기 게임
+# Python 기초 프로젝트
+
+import random
+
+print("===== 숫자 맞히기 게임 =====")
+print("컴퓨터가 생각한 숫자를 맞혀보세요!")
+print("1부터 100 사이의 숫자입니다.")
+
+answer = random.randint(1, 100)
+count = 0
+
+while True:
+    guess = int(input("\n숫자를 입력하세요: "))
+    count += 1
+
+    if guess < 1 or guess > 100:
+        print("1부터 100 사이의 숫자를 입력하세요.")
+    elif guess < answer:
+        print("더 큰 숫자입니다!")
+    elif guess > answer:
+        print("더 작은 숫자입니다!")
+    else:
+        print("\n정답입니다!!!")
+        print("정답:", answer)
+        print("시도 횟수:", count, "회")
+        break
+
+print("게임을 종료합니다. 감사합니다!")
